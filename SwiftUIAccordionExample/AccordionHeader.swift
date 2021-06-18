@@ -13,13 +13,13 @@ struct AccordionHeader: View {
     var body: some View {
         HStack {
             Text(busInfo.stopName)
+            
             Spacer()
+            
             if (isExpanded) {
                 Image(systemName: "chevron.up")
-                   
             } else {
                 Image(systemName: "chevron.down")
-                   
             }
         }
         

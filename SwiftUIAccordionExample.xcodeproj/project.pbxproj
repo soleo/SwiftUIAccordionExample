@@ -13,6 +13,11 @@
 		A9C818C3267D58D700C27B5A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C818C2267D58D700C27B5A /* Preview Assets.xcassets */; };
 		A9C818CE267D58D700C27B5A /* SwiftUIAccordionExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818CD267D58D700C27B5A /* SwiftUIAccordionExampleTests.swift */; };
 		A9C818D9267D58D800C27B5A /* SwiftUIAccordionExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818D8267D58D800C27B5A /* SwiftUIAccordionExampleUITests.swift */; };
+		A9C818E7267D5B5400C27B5A /* StaticDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818E6267D5B5400C27B5A /* StaticDataSource.swift */; };
+		A9C818E9267D5BEB00C27B5A /* BusStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818E8267D5BEB00C27B5A /* BusStop.swift */; };
+		A9C818EB267D628300C27B5A /* BusStopRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818EA267D628300C27B5A /* BusStopRow.swift */; };
+		A9C818ED267D629B00C27B5A /* AccordionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818EC267D629B00C27B5A /* AccordionHeader.swift */; };
+		A9C818EF267D62B200C27B5A /* AccordionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818EE267D62B200C27B5A /* AccordionContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		A9C818D4267D58D800C27B5A /* SwiftUIAccordionExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIAccordionExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C818D8267D58D800C27B5A /* SwiftUIAccordionExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAccordionExampleUITests.swift; sourceTree = "<group>"; };
 		A9C818DA267D58D800C27B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C818E6267D5B5400C27B5A /* StaticDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataSource.swift; sourceTree = "<group>"; };
+		A9C818E8267D5BEB00C27B5A /* BusStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStop.swift; sourceTree = "<group>"; };
+		A9C818EA267D628300C27B5A /* BusStopRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopRow.swift; sourceTree = "<group>"; };
+		A9C818EC267D629B00C27B5A /* AccordionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionHeader.swift; sourceTree = "<group>"; };
+		A9C818EE267D62B200C27B5A /* AccordionContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,11 @@
 				A9C818BF267D58D700C27B5A /* Assets.xcassets */,
 				A9C818C4267D58D700C27B5A /* Info.plist */,
 				A9C818C1267D58D700C27B5A /* Preview Content */,
+				A9C818E6267D5B5400C27B5A /* StaticDataSource.swift */,
+				A9C818E8267D5BEB00C27B5A /* BusStop.swift */,
+				A9C818EA267D628300C27B5A /* BusStopRow.swift */,
+				A9C818EC267D629B00C27B5A /* AccordionHeader.swift */,
+				A9C818EE267D62B200C27B5A /* AccordionContent.swift */,
 			);
 			path = SwiftUIAccordionExample;
 			sourceTree = "<group>";
@@ -259,8 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C818E9267D5BEB00C27B5A /* BusStop.swift in Sources */,
+				A9C818EB267D628300C27B5A /* BusStopRow.swift in Sources */,
 				A9C818BE267D58D600C27B5A /* ContentView.swift in Sources */,
+				A9C818E7267D5B5400C27B5A /* StaticDataSource.swift in Sources */,
 				A9C818BC267D58D600C27B5A /* SwiftUIAccordionExampleApp.swift in Sources */,
+				A9C818ED267D629B00C27B5A /* AccordionHeader.swift in Sources */,
+				A9C818EF267D62B200C27B5A /* AccordionContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

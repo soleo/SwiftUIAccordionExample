@@ -13,7 +13,7 @@ struct BusStopRow: View {
     var busInfo: BusStop
     
     var body: some View {
-        VStack{
+        VStack {
             AccordionHeader(busInfo: busInfo, isExpanded: isExpanded)
                 .onTapGesture {
                     self.isExpanded = !self.isExpanded
