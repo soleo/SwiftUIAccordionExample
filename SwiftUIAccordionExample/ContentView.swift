@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var dataSource = StaticDataSource()
+    @State private var selectedItemId: UUID? = nil
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(dataSource.stops, id: \.id) { item in
+            BusStopRow(busInfo: item)
+        }
+        
+        
     }
 }
 
