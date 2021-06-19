@@ -18,6 +18,8 @@
 		A9C818EB267D628300C27B5A /* BusStopRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818EA267D628300C27B5A /* BusStopRow.swift */; };
 		A9C818ED267D629B00C27B5A /* AccordionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818EC267D629B00C27B5A /* AccordionHeader.swift */; };
 		A9C818EF267D62B200C27B5A /* AccordionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818EE267D62B200C27B5A /* AccordionContent.swift */; };
+		A9C818F3267E6F1400C27B5A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C818F2267E6F1400C27B5A /* MapView.swift */; };
+		A9C818F6267E706700C27B5A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C818F5267E706700C27B5A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		A9C818EA267D628300C27B5A /* BusStopRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopRow.swift; sourceTree = "<group>"; };
 		A9C818EC267D629B00C27B5A /* AccordionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionHeader.swift; sourceTree = "<group>"; };
 		A9C818EE267D62B200C27B5A /* AccordionContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccordionContent.swift; sourceTree = "<group>"; };
+		A9C818F2267E6F1400C27B5A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A9C818F5267E706700C27B5A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C818F6267E706700C27B5A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +94,7 @@
 				A9C818CC267D58D700C27B5A /* SwiftUIAccordionExampleTests */,
 				A9C818D7267D58D800C27B5A /* SwiftUIAccordionExampleUITests */,
 				A9C818B9267D58D600C27B5A /* Products */,
+				A9C818F4267E706700C27B5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +155,7 @@
 				A9C818EA267D628300C27B5A /* BusStopRow.swift */,
 				A9C818EC267D629B00C27B5A /* AccordionHeader.swift */,
 				A9C818EE267D62B200C27B5A /* AccordionContent.swift */,
+				A9C818F2267E6F1400C27B5A /* MapView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -159,6 +166,14 @@
 				A9C818E8267D5BEB00C27B5A /* BusStop.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		A9C818F4267E706700C27B5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9C818F5267E706700C27B5A /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C818E9267D5BEB00C27B5A /* BusStop.swift in Sources */,
+				A9C818F3267E6F1400C27B5A /* MapView.swift in Sources */,
 				A9C818EB267D628300C27B5A /* BusStopRow.swift in Sources */,
 				A9C818BE267D58D600C27B5A /* ContentView.swift in Sources */,
 				A9C818E7267D5B5400C27B5A /* StaticDataSource.swift in Sources */,
