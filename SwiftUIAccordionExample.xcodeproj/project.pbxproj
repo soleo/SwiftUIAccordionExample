@@ -105,16 +105,13 @@
 		A9C818BA267D58D600C27B5A /* SwiftUIAccordionExample */ = {
 			isa = PBXGroup;
 			children = (
+				A9C818F1267E6E8B00C27B5A /* model */,
+				A9C818F0267E6E7900C27B5A /* view */,
 				A9C818BB267D58D600C27B5A /* SwiftUIAccordionExampleApp.swift */,
-				A9C818BD267D58D600C27B5A /* ContentView.swift */,
 				A9C818BF267D58D700C27B5A /* Assets.xcassets */,
 				A9C818C4267D58D700C27B5A /* Info.plist */,
 				A9C818C1267D58D700C27B5A /* Preview Content */,
 				A9C818E6267D5B5400C27B5A /* StaticDataSource.swift */,
-				A9C818E8267D5BEB00C27B5A /* BusStop.swift */,
-				A9C818EA267D628300C27B5A /* BusStopRow.swift */,
-				A9C818EC267D629B00C27B5A /* AccordionHeader.swift */,
-				A9C818EE267D62B200C27B5A /* AccordionContent.swift */,
 			);
 			path = SwiftUIAccordionExample;
 			sourceTree = "<group>";
@@ -143,6 +140,25 @@
 				A9C818DA267D58D800C27B5A /* Info.plist */,
 			);
 			path = SwiftUIAccordionExampleUITests;
+			sourceTree = "<group>";
+		};
+		A9C818F0267E6E7900C27B5A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A9C818BD267D58D600C27B5A /* ContentView.swift */,
+				A9C818EA267D628300C27B5A /* BusStopRow.swift */,
+				A9C818EC267D629B00C27B5A /* AccordionHeader.swift */,
+				A9C818EE267D62B200C27B5A /* AccordionContent.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A9C818F1267E6E8B00C27B5A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A9C818E8267D5BEB00C27B5A /* BusStop.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

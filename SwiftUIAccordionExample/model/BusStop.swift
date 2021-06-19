@@ -6,13 +6,8 @@
 //
 
 import Foundation
-class BusStop {
+struct BusStop: Identifiable, Hashable, Codable {
     var stopName: String
     var stopDetails: String
     var id: UUID = UUID()
-    
-    init(stopName: String, stopDetails: String) {
-        self.stopName = stopName
-        self.stopDetails = stopDetails
-    }
 }
