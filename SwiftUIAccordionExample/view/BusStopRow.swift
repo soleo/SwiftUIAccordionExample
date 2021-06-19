@@ -15,20 +15,22 @@ struct BusStopRow: View {
     var body: some View {
         VStack {
             AccordionHeader(busInfo: busInfo, isExpanded: isExpanded)
+                .padding()
+                .background(Color.yellow)
+                .animation(.default)
                 .onTapGesture {
                     self.isExpanded.toggle()
                 }
-                .padding()
-                .edgesIgnoringSafeArea(.all)
-                .background(Color.yellow)
                             
             if isExpanded {
                 AccordionContent(busInfo: busInfo)
-                .padding()
-                .animation(.default)
+                    .padding()
+                    .transition(.move(edge: .top).combined(with: .opacity))
+                    .animation(.default)
             }
             
         }
+        .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
     }
 }
 

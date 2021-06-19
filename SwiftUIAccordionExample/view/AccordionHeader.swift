@@ -23,7 +23,7 @@ struct AccordionHeader: View {
         
             Image(systemName: "chevron.up")
               .rotationEffect(.degrees(isExpanded ? 0 : 180))
-              .animation(.easeInOut)
+              .animation(.easeIn)
             
         }
         

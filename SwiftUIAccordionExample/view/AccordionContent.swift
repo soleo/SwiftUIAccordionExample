@@ -14,7 +14,6 @@ struct AccordionContent: View {
             Text(busInfo.stopDetails)
                 .bold()
             Spacer()
-                
         })
         
     }

@@ -51,7 +51,6 @@ struct ContentView: View {
                 LazyVStack {
                     ForEach(dataSource.stops) { item in
                         BusStopRow(busInfo: item)
-                            .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                     }
                 }
             }
