@@ -15,10 +15,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Picker("Direction", selection: $selectedDirectionTabIndex) {
-                Text("Northbound").tag(Direction.North)
-                Text("Southbound").tag(Direction.South)
+                Text("Northbound")
+                    .font(.largeTitle)
+                    .tag(Direction.North)
+                Text("Southbound")
+                    .font(.largeTitle)
+                    .tag(Direction.South)
             }
             .pickerStyle(SegmentedPickerStyle())
+            .background(Color.red)
+            .clipShape(Rectangle())
             .onChange(of: selectedDirectionTabIndex, perform: { value in
                 print(selectedDirectionTabIndex)
                 dataSource.loadDataByDirection(direction: selectedDirectionTabIndex)

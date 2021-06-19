@@ -12,13 +12,13 @@ struct AccordionHeader: View {
     var isExpanded: Bool
     var body: some View {
         HStack {
-            VStack{
+            VStack (alignment: .leading, spacing: 0, content: {
                 Text(busInfo.stopName)
-                    .padding(10)
                 Image(systemName: "location.north")
                     .rotationEffect(.degrees(busInfo.direction == Direction.North.description ? 0 : 180))
+                    .padding(.top)
                     
-            }
+            })
             Spacer()
         
             Image(systemName: "chevron.up")
