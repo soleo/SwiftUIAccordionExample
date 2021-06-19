@@ -36,7 +36,7 @@ struct ContentView: View {
             .pickerStyle(SegmentedPickerStyle())
             .onChange(of: selectedDayTabIndex, perform: { value in
                 print("\(value)")
-                dataSource.loadDataByDayOfWeek(dayOfWeek: selectedDayTabIndex, direction: selectedDirectionTabIndex)
+                dataSource.loadDataByDayOfWeekAndDirection(dayOfWeek: selectedDayTabIndex, direction: selectedDirectionTabIndex)
             })
         }
         

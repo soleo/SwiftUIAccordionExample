@@ -21,25 +21,15 @@ class StaticDataSource : ObservableObject {
     }
     
     func loadDataByDirection(direction: Direction) {
-        if direction == .North {
-            self.stops = [
-                BusStop(stopName: "Stop 1", stopDetails: "Arriving Time for stop 1", direction: "North"),
-                BusStop(stopName: "Stop 2", stopDetails: "Arriving Time for stop 2", direction: "North"),
-                BusStop(stopName: "Stop 3", stopDetails: "Arriving Time for stop 3", direction: "North"),
-                BusStop(stopName: "Stop 4", stopDetails: "Arriving Time for stop 4", direction: "North")
-            ]
-        } else if direction == .South {
-            self.stops = [
-                BusStop(stopName: "Stop 1", stopDetails: "Arriving Time for stop 1", direction: "South"),
-                BusStop(stopName: "Stop 2", stopDetails: "Arriving Time for stop 2", direction: "South"),
-                BusStop(stopName: "Stop 3", stopDetails: "Arriving Time for stop 3", direction: "South"),
-                BusStop(stopName: "Stop 4", stopDetails: "Arriving Time for stop 4", direction: "South")
-            ]
-        }
-        
+        self.stops = [
+            BusStop(stopName: "Stop 1", stopDetails: "Arriving Time for stop 1", direction: direction.description),
+            BusStop(stopName: "Stop 2", stopDetails: "Arriving Time for stop 2", direction: direction.description),
+            BusStop(stopName: "Stop 3", stopDetails: "Arriving Time for stop 3", direction: direction.description),
+            BusStop(stopName: "Stop 4", stopDetails: "Arriving Time for stop 4", direction: direction.description)
+        ]
     }
     
-    func loadDataByDayOfWeek(dayOfWeek: DayOfWeek, direction: Direction) {
+    func loadDataByDayOfWeekAndDirection(dayOfWeek: DayOfWeek, direction: Direction) {
         if (dayOfWeek == DayOfWeek.Saturday) {
             self.stops = [
                 BusStop(stopName: "Sat. Stop 1", stopDetails: "Arriving Time for stop 1", direction: direction.description),
