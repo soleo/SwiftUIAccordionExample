@@ -12,8 +12,13 @@ struct AccordionHeader: View {
     var isExpanded: Bool
     var body: some View {
         HStack {
-            Text(busInfo.stopName)
-            
+            VStack{
+                Text(busInfo.stopName)
+                    .padding(10)
+                Image(systemName: "location.north")
+                    .rotationEffect(.degrees(busInfo.direction == Direction.North.description ? 0 : 180))
+                    
+            }
             Spacer()
         
             Image(systemName: "chevron.up")
@@ -26,7 +31,7 @@ struct AccordionHeader: View {
 }
 
 struct AccordionHeader_Previews: PreviewProvider {
-    static var busInfo: BusStop = BusStop(stopName: "Stop Name 1", stopDetails: "Details for the stop 1")
+    static var busInfo: BusStop = BusStop(stopName: "Stop Name 1", stopDetails: "Details for the stop 1", direction: Direction.South.description)
     static var previews: some View {
         AccordionHeader(busInfo: busInfo, isExpanded: true)
         AccordionHeader(busInfo: busInfo, isExpanded: false)

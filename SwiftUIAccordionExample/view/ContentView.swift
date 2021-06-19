@@ -9,21 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var dataSource = StaticDataSource()
-    @State private var selectedTabIndex = 2
+    @State private var selectedDayTabIndex = DayOfWeek.Weekday
+    @State private var selectedDirectionTabIndex = Direction.North
     
     var body: some View {
+        VStack {
+            Picker("Direction", selection: $selectedDirectionTabIndex) {
+                Text("Northbound").tag(Direction.North)
+                Text("Southbound").tag(Direction.South)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .onChange(of: selectedDirectionTabIndex, perform: { value in
+                print(selectedDirectionTabIndex)
+                dataSource.loadDataByDirection(direction: selectedDirectionTabIndex)
+            })
+        }
+        
         MapView()
         
         VStack {
-            Picker("Travel Day", selection: $selectedTabIndex, content: {
-                Text("Saturday").tag(0)
-                Text("Sunday").tag(1)
-                Text("Weekdays").tag(2)
+            Picker("Travel Day", selection: $selectedDayTabIndex, content: {
+                Text("Saturday").tag(DayOfWeek.Saturday)
+                Text("Sunday").tag(DayOfWeek.Sunday)
+                Text("Weekday").tag(DayOfWeek.Weekday)
             })
             .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: selectedTabIndex, perform: { value in
-                print("\(selectedTabIndex)")
-                dataSource.loadDataByDayOfWeek(index: selectedTabIndex)
+            .onChange(of: selectedDayTabIndex, perform: { value in
+                print("\(value)")
+                dataSource.loadDataByDayOfWeek(dayOfWeek: selectedDayTabIndex, direction: selectedDirectionTabIndex)
             })
         }
         

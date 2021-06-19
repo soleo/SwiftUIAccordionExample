@@ -20,27 +20,54 @@ class StaticDataSource : ObservableObject {
         ]
     }
     
-    func loadDataByDayOfWeek(index: Int) {
-        if (index == 0) {
+    func loadDataByDirection(direction: Direction) {
+        if direction == .North {
             self.stops = [
-                BusStop(stopName: "Sat. Stop 1", stopDetails: "Arriving Time for stop 1"),
-                BusStop(stopName: "Sat. Stop 2", stopDetails: "Arriving Time for stop 2"),
-                BusStop(stopName: "Sat. Stop 3", stopDetails: "Arriving Time for stop 3"),
-                BusStop(stopName: "Sat. Stop 4", stopDetails: "Arriving Time for stop 4")
+                BusStop(stopName: "Stop 1", stopDetails: "Arriving Time for stop 1", direction: "North"),
+                BusStop(stopName: "Stop 2", stopDetails: "Arriving Time for stop 2", direction: "North"),
+                BusStop(stopName: "Stop 3", stopDetails: "Arriving Time for stop 3", direction: "North"),
+                BusStop(stopName: "Stop 4", stopDetails: "Arriving Time for stop 4", direction: "North")
             ]
-        } else if(index == 1) {
+        } else if direction == .South {
             self.stops = [
-                BusStop(stopName: "Sun. Stop 1", stopDetails: "Arriving Time for stop 1"),
-                BusStop(stopName: "Sun. Stop 2", stopDetails: "Arriving Time for stop 2"),
-                BusStop(stopName: "Sun. Stop 3", stopDetails: "Arriving Time for stop 3"),
-                BusStop(stopName: "Sun. Stop 4", stopDetails: "Arriving Time for stop 4")
+                BusStop(stopName: "Stop 1", stopDetails: "Arriving Time for stop 1", direction: "South"),
+                BusStop(stopName: "Stop 2", stopDetails: "Arriving Time for stop 2", direction: "South"),
+                BusStop(stopName: "Stop 3", stopDetails: "Arriving Time for stop 3", direction: "South"),
+                BusStop(stopName: "Stop 4", stopDetails: "Arriving Time for stop 4", direction: "South")
+            ]
+        }
+        
+    }
+    
+    func loadDataByDayOfWeek(dayOfWeek: DayOfWeek, direction: Direction) {
+        if (dayOfWeek == DayOfWeek.Saturday) {
+            self.stops = [
+                BusStop(stopName: "Sat. Stop 1", stopDetails: "Arriving Time for stop 1", direction: direction.description),
+                BusStop(stopName: "Sat. Stop 2", stopDetails: "Arriving Time for stop 2", direction: direction.description),
+                BusStop(stopName: "Sat. Stop 3", stopDetails: "Arriving Time for stop 3", direction: direction.description),
+                BusStop(stopName: "Sat. Stop 4", stopDetails: "Arriving Time for stop 4", direction: direction.description)
+            ]
+        } else if(dayOfWeek == DayOfWeek.Sunday) {
+            self.stops = [
+                BusStop(stopName: "Sun. Stop 1", stopDetails: "Arriving Time for stop 1",
+                        direction: direction.description),
+                BusStop(stopName: "Sun. Stop 2", stopDetails: "Arriving Time for stop 2",
+                        direction: direction.description),
+                BusStop(stopName: "Sun. Stop 3", stopDetails: "Arriving Time for stop 3",
+                        direction: direction.description),
+                BusStop(stopName: "Sun. Stop 4", stopDetails: "Arriving Time for stop 4",
+                        direction: direction.description)
             ]
         } else {
             self.stops = [
-                BusStop(stopName: "Stop 1", stopDetails: "Arriving Time for stop 1"),
-                BusStop(stopName: "Stop 2", stopDetails: "Arriving Time for stop 2"),
-                BusStop(stopName: "Stop 3", stopDetails: "Arriving Time for stop 3"),
-                BusStop(stopName: "Stop 4", stopDetails: "Arriving Time for stop 4")
+                BusStop(stopName: "Stop 1", stopDetails: "Arriving Time for stop 1",
+                        direction: direction.description),
+                BusStop(stopName: "Stop 2", stopDetails: "Arriving Time for stop 2",
+                        direction: direction.description),
+                BusStop(stopName: "Stop 3", stopDetails: "Arriving Time for stop 3",
+                        direction: direction.description),
+                BusStop(stopName: "Stop 4", stopDetails: "Arriving Time for stop 4",
+                        direction: direction.description)
             ]
         }
         
