@@ -14,46 +14,60 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Picker("Direction", selection: $selectedDirectionTabIndex) {
-                Text("Northbound")
-                    .font(.largeTitle)
-                    .tag(Direction.North)
-                Text("Southbound")
-                    .font(.largeTitle)
-                    .tag(Direction.South)
+            VStack {
+                Picker("Direction", selection: $selectedDirectionTabIndex) {
+                    Text("Northbound")
+                        .font(.largeTitle)
+                        .tag(Direction.North)
+                    Text("Southbound")
+                        .font(.largeTitle)
+                        .tag(Direction.South)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .background(Color.red)
+                .clipShape(Rectangle())
+                .onChange(of: selectedDirectionTabIndex, perform: { value in
+                    print(selectedDirectionTabIndex)
+                    dataSource.loadDataByDirection(direction: selectedDirectionTabIndex)
+                })
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .background(Color.red)
-            .clipShape(Rectangle())
-            .onChange(of: selectedDirectionTabIndex, perform: { value in
-                print(selectedDirectionTabIndex)
-                dataSource.loadDataByDirection(direction: selectedDirectionTabIndex)
-            })
-        }
-        
-        MapView()
-        
-        VStack {
-            Picker("Travel Day", selection: $selectedDayTabIndex, content: {
-                Text("Saturday").tag(DayOfWeek.Saturday)
-                Text("Sunday").tag(DayOfWeek.Sunday)
-                Text("Weekday").tag(DayOfWeek.Weekday)
-            })
-            .pickerStyle(SegmentedPickerStyle())
-            .onChange(of: selectedDayTabIndex, perform: { value in
-                print("\(value)")
-                dataSource.loadDataByDayOfWeekAndDirection(dayOfWeek: selectedDayTabIndex, direction: selectedDirectionTabIndex)
-            })
-        }
-        
-        List(dataSource.stops, id: \.id) { item in
-            BusStopRow(busInfo: item)
+            
+            MapView()
+            
+            VStack {
+                Picker("Travel Day", selection: $selectedDayTabIndex, content: {
+                    Text("Saturday").tag(DayOfWeek.Saturday)
+                    Text("Sunday").tag(DayOfWeek.Sunday)
+                    Text("Weekday").tag(DayOfWeek.Weekday)
+                })
+                .pickerStyle(SegmentedPickerStyle())
+                .onChange(of: selectedDayTabIndex, perform: { value in
+                    print("\(value)")
+                    dataSource.loadDataByDayOfWeekAndDirection(dayOfWeek: selectedDayTabIndex, direction: selectedDirectionTabIndex)
+                })
+            }
+            
+            ScrollView {
+                LazyVStack {
+                    ForEach(dataSource.stops) { item in
+                        BusStopRow(busInfo: item)
+                            .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                    }
+                }
+            }
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @State static var selectedDayTabIndex = DayOfWeek.Weekday
+    @State static var selectedDirectionTabIndex = Direction.North
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            
+            ContentView()
+                .colorScheme(.dark)
+        }
     }
 }

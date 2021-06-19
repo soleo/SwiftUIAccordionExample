@@ -19,7 +19,9 @@ struct BusStopRow: View {
                     self.isExpanded.toggle()
                 }
                 .padding()
-                
+                .edgesIgnoringSafeArea(.all)
+                .background(Color.yellow)
+                            
             if isExpanded {
                 AccordionContent(busInfo: busInfo)
                 .padding()
